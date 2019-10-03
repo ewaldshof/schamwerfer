@@ -103,10 +103,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-<<<<<<< HEAD
 # .DS_Store
 .DS_Store
-=======
 # VS Code config
 /.vscode/
->>>>>>> 3f0e8c677dee2d328ccac6e258b2299e5583eee1
