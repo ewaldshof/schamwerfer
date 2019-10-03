@@ -1,3 +1,4 @@
+from position import Position
 import re
 import serial
 
@@ -13,20 +14,15 @@ class DWM1001:
         self.send("lep")
         self.listening = True
         while self.listening:
-            line = self.serial.readline().decode("utf-8")
+            line = self.serial.readline()
             if line == "": # EOF
                 return False
+            line = line.decode("utf-8")
             line = self.no_prompt.sub("", line.strip()).split(",")
             if len(line) >= 8:
                 type, id = line[0], line[2]
-                x, y, z = float(line[3]), float(line[4]), float(line[5])
-                callback(self, id, x, y, z)
+                pos = Position(*line[3:6])
+                callback(self, id, pos)
 
     def send(self, string=""):
         self.serial.write((string + "\r\n").encode("utf-8"))
-
-# Example: Read from ttyS5 and print positions to console.
-if __name__ == "__main__":
-    def printer(dwm, id, x, y, z):
-        print(id, x, y, z)
-    DWM1001("/dev/ttyS5").listen(printer)
