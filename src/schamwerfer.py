@@ -14,6 +14,7 @@ class Schamwerfer:
         print(id, pos)
         if id == self.tag_id:
             self.beam.pointAt(pos.x, pos.y, pos.z)
+            self.beam.update()
 
     def listen(self):
         self.dwm.listen(self.update)
