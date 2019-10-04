@@ -17,6 +17,7 @@ class MQTT(Task):
     def __init__(self, network):
         super().__init__()
         self.connected = False
+        self.interval = 200
         self.subscriptions = []
         self.client = MQTTClient(network.mac, MQTT.SERVER)
         self.client.set_callback(self.callback)
