@@ -1,4 +1,6 @@
 {
-    "board": "esp8266:esp8266:huzzah",
-    "configuration": "CpuFrequency=80,UploadSpeed=115200,FlashSize=4M3M"
+    "board": "espressif:esp32:heltec_wifi_lora_32",
+    "configuration": "FlashFreq=80,UploadSpeed=921600",
+    "port": "/dev/cu.SLAB_USBtoUART",
+    "programmer": "USBtinyISP"
 }
