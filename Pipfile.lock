@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a9fcc5931682bbca22ad91dbdb3120c32c21b4d52002de0845650e7bb167e43d"
+            "sha256": "3206e4afb8a229f5e8384167a9eb7604fdc37ce9e31a56855b181e1637cc4acc"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,21 @@
             ],
             "index": "pypi",
             "version": "==3.4"
+        },
+        "pyusb": {
+            "hashes": [
+                "sha256:4e9b72cc4a4205ca64fbf1f3fff39a335512166c151ad103e55c8223ac147362",
+                "sha256:ad60c1f25bfc1808049869d876c73ad454fa5f8bd15f4df9d1a732c75ee250b1"
+            ],
+            "version": "==1.0.2"
+        },
+        "udmx-pyusb": {
+            "hashes": [
+                "sha256:3d0bdb5acbfd7eb2f6ac4f3d13d08b89260454d4c9a97088db13819e9e5391a8",
+                "sha256:3ed45facbbab6c49d6218a04eb44377b21022415f79cce9e271d489ed6d7c263"
+            ],
+            "index": "pypi",
+            "version": "==2.0.0"
         }
     },
     "develop": {}
