@@ -10,12 +10,12 @@ class Schamwerfer:
         self.beam = MiniBeam(1, beam_pos.x, beam_pos.y, beam_pos.z, beam_pan, beam_tilt)
         self.beam.setRGBWDS(0, 0, 0, 255)
 
-    def update(dwm, id, pos):
+    def update(self, dwm, id, pos):
         print(id, pos)
         if id == self.tag_id:
             self.beam.pointAt(pos.x, pos.y, pos.z)
 
-    def listen():
+    def listen(self):
         self.dwm.listen(self.update)
 
 
