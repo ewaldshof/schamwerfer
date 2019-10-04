@@ -1,6 +1,7 @@
 from dmx import MiniBeam
 from dwm1001 import DWM1001
 from position import Position
+import time
 
 class Schamwerfer:
 
@@ -19,9 +20,14 @@ class Schamwerfer:
     def listen(self):
         self.dwm.listen(self.update)
 
-    def pointAt(self, pos):
-        self.beam.pointAt(pos.x, pos.y, self.fixed_z if self.fixed_z is not None else pos.z)
+    def pointAt(self, pos, use_fixed_z=True):
+        self.beam.pointAt(pos.x, pos.y, self.fixed_z if self.fixed_z is not None and use_fixed_z else pos.z)
         self.beam.update()
+
+    def pointAtMultiple(self, positions, sleep=2):
+        for pos in positions:
+            self.pointAt(pos, use_fixed_z=False)
+            time.sleep(sleep)
 
 
 # Example: Read from ttyS5 and locate the beam at a certain position in the room.
@@ -32,4 +38,14 @@ if __name__ == "__main__":
         Position(6.56, 3.69, 1.08),
         0,
         0,
-    ).listen()
+        1.5
+    )
+    s.pointAtMultiple([
+        Position(0.05, 3.65, 2.75),
+        Position(4.02, 3.65, 0.63),
+        Position(7.79, 4.65, 0.88),
+        Position(8.61, 0.18, 2.64),
+        Position(4.94, 0.20, 0.05),
+        Position(0.05, 0.10, 2.75),
+    ])
+    s.listen()
