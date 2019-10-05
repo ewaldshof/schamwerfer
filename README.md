@@ -13,12 +13,21 @@
 * Light and beacon are both working and the light is able to track a beacon with half a meter. The accuracy could be increased by using more beacons.
 * Integration between the light and the electroshock device is not complete and is a topic for future work.
 
-### General Tools needed: 
+### General Tools needed:
 * Mac / PC / Linux computer
 * [Laser rangefinder or meter tape any model will do](images/Laser_Rangefinder.JPG)
 
-### Beacon and Lighting Hardware:
+### Beacon Hardware:
 * [decaWave MDEK1001 Module Development & Evaluation Kit](https://www.decawave.com/product/mdek1001-deployment-kit/)
+The beacons enable indoor tracking.  In our case we've set up four beacons in various corners and heights within the room.  Multiple heights are nessesary in order to obtain an exact reading for the x, y and particularly z axeses.
+Photos can be found [here](images/Beacons).
+
+The inital setup can be done by following the directions delivered with the hardware.  A scan of the instructions can be found [here](images/decaWave Einleitung.pdf)
+
+The [result](images/Tracking_Android_App.JPG) of this initial setup is being able to track a beacon in a room on xyz axeses. This output can be inspected on the included Android GUI.
+
+### Lighting Hardware:
+
 
 ### Tens Device
 Tens is a German word for medical devices intended to deliver a theraputic level of electrical current to a person for the purposes of physical therapy for instance. Here we're using the tens device for BDSM. 
