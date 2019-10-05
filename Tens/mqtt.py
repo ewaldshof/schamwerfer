@@ -3,6 +3,12 @@ from umqtt.simple import MQTTClient
 import ure
 
 class MQTT(Task):
+# The server address below is specific to Ewaldshof if you're setting 
+# this up somewhere else make sure to update the server address below 
+# with your own MQTT info. The default port is 1883 and imported MQTTClient
+# above should set this default automatically.  If your MQTT Server has a different 
+# server you might have to update id manually in the library. 
+# See details in umqtt.simple documentation. 
 
     SERVER = "mqtt.ewh"
 
