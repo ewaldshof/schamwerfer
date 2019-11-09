@@ -71,7 +71,10 @@ class MiniBeam:
         self.dev.close()
 
     def update(self):
-        self.dev.send_multi_value(self.channel, self.data)
+        try:
+            self.dev.send_multi_value(self.channel, self.data)
+        except:
+            print("libusb KARPOTT")
 
     def setRGBWDS(self, red, green, blue, white=0, dim=255, strobe=0):
         assert 0 <= red   < 256
